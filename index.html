@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Liber</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Literata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header_content">
+
+                <img src="images/logo-fullsize.png" class="logo">
+
+                <nav class="navigation" id="nav_bar">
+                    <ul>
+                        <a class="nav_link red" href="#about">О нас</a>
+                        <a class="nav_link blue" href="#photos">Фотогалерея</a>
+                        <a class="nav_link yellow" href="#reviews">Отзывы</a>
+                        <a class="nav_link green" href="#info">Контакты</a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- СКРИПТ ДЛЯ ПЛАВНОГО ПЕРЕХОДА ПО ЯКОРЯМ -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $("#nav_bar").on("click","a", function (event) {
+               event.preventDefault();
+               var id  = $(this).attr('href'),
+                   top = $(id).offset().top;
+               $('body,html').animate({scrollTop: top}, 1500);
+           });
+       });
+       </script>
+
+    <div id="back-top">
+        <a href="#" onclick="return up()">ВВЕРХ</a>  
+    </div>
+    <!-- СКРИПТ ДЛЯ ВОЗВРАТА НА ВЕРХ СТРАНИЦЫ -->
+    <script type="text/javascript">
+        function up() {
+            var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+            if (top > 0) {
+                window.scrollBy(0, ((top + 100) / -10));
+                t = setTimeout('up()', 20);
+            } else clearTimeout(t);
+            return false;
+        } 
+    </script>
+
+    <div class="section">
+        <div class="about" id="about">
+            <div class="container">
+                <p>
+                <div class="panel__image--book">
+                    <a href="#" class="book__image">
+                        <div class="book__img">
+                            <img src="images/book.png">
+                        </div>
+                    </a>
+                </div>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="slide-container" id="photos">
+                <span id="slider-image-1"></span>
+                <span id="slider-image-2"></span>
+                <span id="slider-image-3"></span>
+                <span id="slider-image-4"></span>
+                <span id="slider-image-5"></span>
+                <span id="slider-image-6"></span>
+                <span id="slider-image-7"></span>
+                <div class="image-container">
+                    <img src="images/image1.png" alt="#" class="slider-image">
+                    <img src="images/image2.png" alt="#" class="slider-image">
+                    <img src="images/image3.png" alt="#" class="slider-image">
+                    <img src="images/image4.png" alt="#" class="slider-image">
+                    <img src="images/image5.png" alt="#" class="slider-image">
+                    <img src="images/image6.png" alt="#" class="slider-image">
+                    <img src="images/image7.png" alt="#" class="slider-image">
+                </div>
+                <div class="button-container" id="btn">
+                    <a href="#slider-image-1" class="slider-button"></a>
+                    <a href="#slider-image-2" class="slider-button"></a>
+                    <a href="#slider-image-3" class="slider-button"></a>
+                    <a href="#slider-image-4" class="slider-button"></a>
+                    <a href="#slider-image-5" class="slider-button"></a>
+                    <a href="#slider-image-6" class="slider-button"></a>
+                    <a href="#slider-image-7" class="slider-button"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section">
+        <div class="Rev">
+            <div class="container">
+                <h2 id="reviews">Рецензии</h2>
+
+                <ul>
+                    <hr>
+                    <li><i><br>Dima:</br>отзыв</i></li>
+                    <hr>
+                    <li><i><br>Leha:</br>Отзыв</i></li>
+                    <hr>
+                    <li><i><br>Maxon:</br>Отзыв</i>
+                        <ol>
+                            <li><i><br>Leha:</br>Ответ на отзыв 1</i></li>
+                            <li><i><br>Maxon:</br>Ответ на отзыв 2</i></li>
+                        </ol>
+                    </li>
+                    <hr>
+                    <li><i><br>Bot16:</br>Отзыв</i></li>
+                    <hr>
+                </ul>
+
+                <form class="review_form">
+
+
+                    <input placeholder="Имя" maxlength=50>
+                    <textarea placeholder="Ваш отзыв" maxlength=500></textarea>
+                    <label>Оценка:</label>
+                    <select>
+                        <option>☆</option>
+                        <option>☆☆</option>
+                        <option>☆☆☆</option>
+                        <option>☆☆☆☆</option>
+                        <option>☆☆☆☆☆</option>
+                    </select>
+
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="Contacts" id="info">
+            <div class="container">
+                <h2>Контактная информация</h2>
+                <a href="https://goo.gl/maps/czYTdj7eKLpiM19J7" target="_blank"><img src="images/map.png"
+                        alt="Геолокация">
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p><strong>Адреса: м.Харків, вул</strong><br>
+            <strong>Телефон: 0660006600</strong><br>
+            <strong>Електронна пошта: liber@gmail.com</strong></p>
+
+        <table class="table__time">
+            <tr>
+                <td colspan=2>Время работы</td>
+            </tr>
+            <tr>
+                <td>
+                    Пн-Пт
+                </td>
+                <td>
+                    7:00-22:00
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Сб-Вс
+                </td>
+                <td>
+                    8:00-21:00
+                </td>
+            </tr>
+        </table>
+    </footer>
+
+</body>
+
+</html>
